@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	color-scheme: light dark;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.colour-options-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	width: clamp(46vh - 2rem, 40% + 5rem, 70vh);
+}

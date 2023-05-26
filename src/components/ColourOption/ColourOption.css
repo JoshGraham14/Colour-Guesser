@@ -1,0 +1,9 @@
+.colour-option {
+	aspect-ratio: 1;
+	border: 0;
+	border-radius: 0.5rem;
+}
+
+.colour-option:hover {
+	cursor: pointer;
+}
