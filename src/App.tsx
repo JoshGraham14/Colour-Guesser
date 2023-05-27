@@ -5,9 +5,11 @@ import { generateColours, Colour } from './generateColours'
 import { Question } from './components/Question/Question'
 import './App.css'
 
-function App() {
+const App = () => {
 	const [colourOptions, setColourOptions] = useState<Colour[]>([])
 	const [answer, setAnswer] = useState<Colour>({} as Colour)
+	const [chosen, setChosen] = useState<Colour | undefined>()
+	const [success, setSuccess] = useState<boolean>()
 	const numColours = 4
 
 	useEffect(() => {
@@ -17,6 +19,16 @@ function App() {
 		setAnswer(colours[randomIndex])
 	}, [])
 
+	useEffect(() => {
+		if (chosen === undefined) {
+			return
+		} else if (chosen.equals(answer)) {
+			setSuccess(true)
+		} else {
+			setSuccess(false)
+		}
+	}, [chosen])
+
 	return (
 		<>
 			<Header />
@@ -24,9 +36,22 @@ function App() {
 				<Question colour={answer} />
 				<div className='colour-options-container'>
 					{colourOptions.map((colour, idx) => {
-						return <ColourOption colour={colour} key={idx} />
+						return (
+							<ColourOption
+								colour={colour}
+								setChosen={setChosen}
+								key={idx}
+							/>
+						)
 					})}
 				</div>
+				<h1>
+					{success !== undefined
+						? success === true
+							? 'Correct :)'
+							: 'Incorrect :('
+						: ''}
+				</h1>
 			</main>
 		</>
 	)
