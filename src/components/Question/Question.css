@@ -1,0 +1,19 @@
+.question {
+	display: flex;
+	/* font-size: calc(5vh + 5vw - 2rem); */
+	font-size: clamp(3rem, 5vh + 5vw - 2rem, 5rem);
+	padding-inline: 1rem;
+	border-radius: 0.5rem;
+}
+
+.red {
+	color: rgb(189, 73, 73);
+}
+
+.green {
+	color: rgb(55, 209, 55);
+}
+
+.blue {
+	color: rgb(16, 16, 248);
+}

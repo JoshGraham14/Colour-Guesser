@@ -1,4 +1,5 @@
 import { Colour } from '../../generateColours'
+import './Question.css'
 
 interface Props {
 	colour: Colour
@@ -7,8 +8,10 @@ interface Props {
 export const Question = (props: Props) => {
 	const { colour } = props
 	return (
-		<h3>
-			({colour.red}, {colour.green}, {colour.blue})
-		</h3>
+		<h1 className='question'>
+			(<span className='red'>{colour.red}</span>,{' '}
+			<span className='green'>{colour.green}</span>,{' '}
+			<span className='blue'>{colour.blue}</span>)
+		</h1>
 	)
 }
