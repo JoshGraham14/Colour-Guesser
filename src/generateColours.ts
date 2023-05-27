@@ -1,8 +1,28 @@
-export type Colour = {
+// export type Colour = {
+// 	red: number
+// 	green: number
+// 	blue: number
+// 	alpha?: number
+// }
+
+export class Colour {
 	red: number
 	green: number
 	blue: number
-	alpha?: number
+
+	constructor(r: number, g: number, b: number) {
+		this.red = r
+		this.green = g
+		this.blue = b
+	}
+
+	public equals(obj: Colour): boolean {
+		return (
+			this.red === obj.red &&
+			this.green === obj.green &&
+			this.blue == obj.blue
+		)
+	}
 }
 
 /**
@@ -14,7 +34,7 @@ export const randomColour = (): Colour => {
 	const green: number = Math.round(Math.random() * 255)
 	const blue: number = Math.round(Math.random() * 255)
 
-	return { red, green, blue }
+	return new Colour(red, green, blue)
 }
 
 /**
