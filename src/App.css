@@ -26,5 +26,5 @@ main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 1rem;
-	width: clamp(46vh - 2rem, 40% + 5rem, 70vh);
+	width: clamp(42vh - 2rem, 30% + 5rem, 60vh);
 }
